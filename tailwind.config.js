@@ -31,6 +31,7 @@ export default {
       },
       fontFamily: {
         Signatra: ["Signatra", "sans-serif"],
+        Epilogue: ["Epilogue", "sans-serif"],
       },
     },
   },
