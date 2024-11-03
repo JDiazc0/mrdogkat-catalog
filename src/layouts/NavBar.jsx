@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { IconsSvg } from "../utils/Icon";
 import { menuItems } from "../data/NavItems";
-
-//import styles from "../styles/NavBar.css";
 
 function NavBar() {
   const location = useLocation();
   const [activeItem, setActiveItem] = useState(location.pathname);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setActiveItem(location.pathname);
+  }, [location.pathname]);
 
   const handleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
