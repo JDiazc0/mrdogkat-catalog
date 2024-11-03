@@ -33,6 +33,15 @@ export default {
         Signatra: ["Signatra", "sans-serif"],
         Epilogue: ["Epilogue", "sans-serif"],
       },
+      keyframes: {
+        "line-fill": {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
+        },
+      },
+      animation: {
+        "line-fill": "line-fill 0.4s ease-in-out forwards",
+      },
     },
   },
   plugins: [],
