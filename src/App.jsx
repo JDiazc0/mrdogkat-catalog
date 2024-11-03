@@ -1,12 +1,19 @@
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import NavBar from "./layouts/NavBar";
+import Index from "./pages/Index";
+import Products from "./pages/Products";
+import AboutUs from "./pages/AboutUs";
+
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100">
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-blue-600">
-          ¡Hola Tailwind + React!
-        </h1>
-      </div>
-    </div>
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/productos" element={<Products />} />
+        <Route path="/nosotros" element={<AboutUs />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
