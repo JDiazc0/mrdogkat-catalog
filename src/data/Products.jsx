@@ -1,0 +1,81 @@
+import { Images } from "../utils/Img";
+
+export const products = [
+  {
+    showImage: Images.Galletas,
+    productName: "Galletas de Pollo",
+    amount: "30 gr",
+    description: "Galletas naturales con pollo por 30 gramos",
+    price: "3000",
+  },
+  {
+    showImage: Images.Galletas,
+    productName: "Galletas de Hígado",
+    amount: "30 gr",
+    description: "Galletas naturales con hígado por 30 gramos",
+    price: "3000",
+  },
+  {
+    showImage: Images.Galletas,
+    productName: "Galletas de Pollo & Espinaca",
+    amount: "30 gr",
+    description: "Galletas naturales con pollo y espinaca por 30 gramos",
+    price: "3000",
+  },
+  {
+    showImage: Images.Galletas,
+    productName: "Galletas de Pollo & Zanahoria",
+    amount: "30 gr",
+    description: "Galletas naturales con pollo y zanahoria por 30 gramos",
+    price: "3000",
+  },
+  {
+    showImage: Images.Galletas,
+    productName: "Mix de Galletas",
+    amount: "30 gr",
+    description: "Mix de galletas naturales de todos los sabores por 30 gramos",
+    price: "3000",
+  },
+  {
+    showImage: Images.Galletas,
+    productName: "Galletas de Pollo",
+    amount: "50 gr",
+    description: "Galletas naturales con pollo por 50 gramos",
+    price: "5000",
+  },
+  {
+    showImage: Images.Galletas,
+    productName: "Galletas de Hígado",
+    amount: "50 gr",
+    description: "Galletas naturales con hígado por 50 gramos",
+    price: "5000",
+  },
+  {
+    showImage: Images.Galletas,
+    productName: "Galletas de Pollo & Espinaca",
+    amount: "50 gr",
+    description: "Galletas naturales con pollo y espinaca por 50 gramos",
+    price: "5000",
+  },
+  {
+    showImage: Images.Galletas,
+    productName: "Galletas de Pollo & Zanahoria",
+    amount: "50 gr",
+    description: "Galletas naturales con pollo y zanahoria por 50 gramos",
+    price: "5000",
+  },
+  {
+    showImage: Images.Galletas,
+    productName: "Mix de Galletas",
+    amount: "50 gr",
+    description: "Mix de galletas naturales de todos los sabores por 50 gramos",
+    price: "5000",
+  },
+  {
+    showImage: Images.Galletas,
+    productName: "Galletas de Pollo & Espinaca",
+    amount: "50 gr",
+    description: "Galletas naturales con pollo y espinaca por 50 gramos",
+    price: "5000",
+  },
+];

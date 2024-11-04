@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 
 import { IconsSvg } from "../utils/Icon";
 import { Images } from "../utils/Img";
+import { products } from "../data/Products";
+
+import ProductCard from "../components/ProductCard";
 
 function Index() {
   return (
@@ -36,8 +39,22 @@ function Index() {
             />
           </div>
         </section>
-        <section className="flex flex-col h-screen items-center md:pt-10">
+        <section className="flex flex-col h-auto items-center md:pt-10">
           <h3 className="font-medium text-3xl">Productos</h3>
+          <div className="flex overflow-x-auto w-full space-x-4">
+            <div className="flex w-max space-x-4">
+              {products.map((product, index) => (
+                <ProductCard
+                  key={index}
+                  showImage={product.showImage}
+                  productName={product.productName}
+                  amount={product.amount}
+                  description={product.description}
+                  extraClass="transition-transform transform hover:scale-105"
+                />
+              ))}
+            </div>
+          </div>
         </section>
       </div>
     </>
