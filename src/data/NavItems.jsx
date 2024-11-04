@@ -1,5 +1,5 @@
 export const menuItems = [
-  { name: "Inicio", to: "/" },
-  { name: "Productos", to: "/productos" },
-  { name: "Nosotros", to: "/Nosotros" },
+  { name: "Inicio", to: "/inicio" },
+  { name: "Productos", to: "/productos/todo" },
+  { name: "Nosotros", to: "/nosotros" },
 ];

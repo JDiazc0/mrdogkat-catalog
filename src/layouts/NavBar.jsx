@@ -35,6 +35,8 @@ function NavBar() {
                 onClick={() => setActiveItem(item.to)}>
                 <span
                   className={` ${
+                    (item.to === "/productos/todo" &&
+                      location.pathname.startsWith("/productos")) ||
                     activeItem === item.to
                       ? "text-primary-500"
                       : "group-hover:text-primary-500"
@@ -43,6 +45,8 @@ function NavBar() {
                 </span>
                 <div
                   className={`h-1 rounded ${
+                    (item.to === "/productos/todo" &&
+                      location.pathname.startsWith("/productos")) ||
                     activeItem === item.to
                       ? "bg-primary-500"
                       : "group-hover:bg-primary-500 group-hover:animate-line-fill"
@@ -76,6 +80,8 @@ function NavBar() {
                 onClick={() => setActiveItem(item.to)}>
                 <span
                   className={` ${
+                    (item.to === "/productos/todo" &&
+                      location.pathname.startsWith("/productos")) ||
                     activeItem === item.to
                       ? "text-primary-500"
                       : "group-hover:text-primary-500"
