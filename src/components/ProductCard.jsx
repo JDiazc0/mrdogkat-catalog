@@ -1,5 +1,5 @@
 function ProductCard(props) {
-  const { showImage, productName, amount, description, extraClass } = props;
+  const { showImage, productName, description, extraClass } = props;
 
   return (
     <>
@@ -16,15 +16,9 @@ function ProductCard(props) {
           />
         </div>
         <div className="flex flex-col h-auto justify-end items-start">
-          <div className="flex items-center">
-            <h3 className="font-bold pr-4 text-3xl md:text-xl content-center">
-              {productName}
-            </h3>
-            <p className="font-light text-lg md:text-sm text-primary-500">
-              {amount}
-            </p>
-          </div>
-
+          <h3 className="font-bold pr-4 text-3xl md:text-xl content-center">
+            {productName}
+          </h3>
           <p className="my-1 text-lg md:text-sm">{description}</p>
           <button
             className="p-1 my-1 bg-primary-500 text-white 
