@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { IconsSvg } from "../utils/Icon";
 import { Images } from "../utils/Img";
 import { products } from "../data/Products";
+import { benefits } from "../data/Benefits";
 
 import ProductCard from "../components/ProductCard";
 
@@ -39,7 +40,7 @@ function Index() {
             />
           </div>
         </section>
-        <section className="flex flex-col h-auto items-center md:pt-10">
+        <section className="flex flex-col h-auto items-center md:py-10">
           <h3 className="font-medium text-3xl">Productos</h3>
           <div className="flex overflow-x-auto w-full space-x-4">
             <div className="flex w-max space-x-4">
@@ -54,6 +55,22 @@ function Index() {
                 />
               ))}
             </div>
+          </div>
+        </section>
+        <section className="flex flex-col h-auto items-center py-10">
+          <h3 className="font-medium text-3xl py-5 px-2">
+            ¿Por qué escogernos?
+          </h3>
+          <div className="flex flex-col justify-center lg:grid lg:grid-cols-2">
+            {benefits.map((index) => (
+              <div key={index.text} className="flex my-5">
+                <img src={index.icon} alt="" className="h-12 mx-2" />
+                <div className="mx-2">
+                  <h3 className="font-bold text-2xl">{index.text}</h3>
+                  <p>{index.complement}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
       </div>
