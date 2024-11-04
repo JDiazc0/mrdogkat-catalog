@@ -17,7 +17,7 @@ function Index() {
               <h2 className="font-medium text-3xl md:text-5xl lg:text-6xl my-1">
                 Snacks naturales <br />y deliciosos
               </h2>
-              <Link to={"/productos"}>
+              <Link to={"/productos/todo"}>
                 <button
                   className="flex items-center p-1 my-1 bg-primary-500 
               text-white font-medium rounded shadow-[0_0_10px_0_rgba(0,0,0,0.75)] shadow-primary-500 active:scale-95">
@@ -49,7 +49,6 @@ function Index() {
                   key={index}
                   showImage={product.showImage}
                   productName={product.productName}
-                  amount={product.amount}
                   description={product.description}
                   extraClass="transition-transform transform hover:scale-105"
                 />
