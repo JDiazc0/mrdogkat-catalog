@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 import { IconsSvg } from "../utils/Icon";
 import { Images } from "../utils/Img";
-import { products } from "../data/Products";
 import { benefits } from "../data/Benefits";
+import products from "../data/Products.json";
 
 import ProductCard from "../components/ProductCard";
 
@@ -44,12 +44,10 @@ function Index() {
           <h3 className="font-medium text-3xl">Productos</h3>
           <div className="flex overflow-x-auto w-full space-x-4">
             <div className="flex w-max space-x-4">
-              {products.map((product, index) => (
+              {products.map((index) => (
                 <ProductCard
-                  key={index}
-                  showImage={product.showImage}
-                  productName={product.productName}
-                  description={product.description}
+                  key={index.id}
+                  product={index}
                   extraClass="transition-transform transform hover:scale-105"
                 />
               ))}
