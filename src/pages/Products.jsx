@@ -21,6 +21,14 @@ function Products() {
     setIsFilterOpen(!isFilterOpen);
   };
 
+  useEffect(() => {
+    console.log("perravida", isFilterOpen);
+  }, []);
+
+  useEffect(() => {
+    console.log("ahora es", isFilterOpen);
+  }, [isFilterOpen]);
+
   return (
     <>
       <div className="relative w-full h-screen overflow-x-hidden font-Epilogue text-secondary-500 pt-24 h-lvh">
@@ -54,10 +62,10 @@ function Products() {
         </div>
       </div>
       <div
-        className={`lg:hidden absolute h-lvh top-0 right-0 w-3/4 pt-20 
+        className={`lg:hidden absolute h-lvh top-0  w-3/4 pt-20 
           text-2xl bg-white transition-all duration-500 content-center justify-items-start
           ease-in-out transform overflow-hidden ${
-            isFilterOpen ? "right-0 opacity-100" : "-right-3/4"
+            isFilterOpen ? "right-0" : "-right-3/4"
           }`}>
         {Filters.map((index) => (
           <div

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { IconsSvg } from "../utils/Icon";
 import { menuItems } from "../data/NavItems";
@@ -7,10 +7,23 @@ function NavBar() {
   const location = useLocation();
   const [activeItem, setActiveItem] = useState(location.pathname);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
 
   useEffect(() => {
     setActiveItem(location.pathname);
   }, [location.pathname]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -59,15 +72,16 @@ function NavBar() {
 
           <div className="flex justify-end w-3/5 md:hidden">
             <button type="button" title="menu" onClick={() => handleMenu()}>
-              {isMenuOpen ? (
-                <img src={IconsSvg.CloseMenu} alt="" className="h-12" />
-              ) : (
-                <img src={IconsSvg.Menu} alt="" className="h-12" />
-              )}
+              <img
+                src={IconsSvg.Menu}
+                alt=""
+                className={`h-12 ${isMenuOpen ? "hidden" : "block"}`}
+              />
             </button>
           </div>
         </nav>
         <div
+          ref={menuRef}
           className={`md:hidden text-2xl transition-all duration-500 easi-in-out transform overflow-hidden ${
             isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
           }`}>
@@ -77,7 +91,9 @@ function NavBar() {
                 key={item.name}
                 to={item.to}
                 className={`my-5 group font-medium`}
-                onClick={() => setActiveItem(item.to)}>
+                onClick={() => {
+                  setActiveItem(item.to), setIsMenuOpen(false);
+                }}>
                 <span
                   className={` ${
                     (item.to === "/productos/todo" &&
@@ -93,6 +109,10 @@ function NavBar() {
           </div>
         </div>
       </header>
+      <div
+        className={`bg-secondary-500 bg-opacity-50 h-screen w-screen z-10 ${
+          isMenuOpen ? "absolute" : "hidden"
+        }`}></div>
     </>
   );
 }
