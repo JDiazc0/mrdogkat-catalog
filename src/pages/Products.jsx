@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import { Filters } from "../data/Filters";
 import products from "../data/Products.json";
@@ -10,6 +10,7 @@ function Products() {
   const { type } = useParams();
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const filterRef = useRef(null);
 
   useEffect(() => {
     const filtered =
@@ -17,20 +18,28 @@ function Products() {
     setFilteredProducts(filtered);
   }, [type]);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (filterRef.current && !filterRef.current.contains(event.target)) {
+        setIsFilterOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   const handleFilter = () => {
     setIsFilterOpen(!isFilterOpen);
   };
 
-  useEffect(() => {
-    console.log("perravida", isFilterOpen);
-  }, []);
-
-  useEffect(() => {
-    console.log("ahora es", isFilterOpen);
-  }, [isFilterOpen]);
-
   return (
     <>
+      <div
+        className={`bg-secondary-500 bg-opacity-50 h-screen w-screen z-10 ${
+          isFilterOpen ? "absolute" : "hidden"
+        }`}></div>
       <div className="relative w-full h-screen overflow-x-hidden font-Epilogue text-secondary-500 pt-24 h-lvh">
         <div className="flex justify-center items-center hidden lg:flex">
           {Filters.map((index) => (
@@ -62,15 +71,16 @@ function Products() {
         </div>
       </div>
       <div
-        className={`lg:hidden absolute h-lvh top-0  w-3/4 pt-20 
-          text-2xl bg-white transition-all duration-500 content-center justify-items-start
+        ref={filterRef}
+        className={`lg:hidden absolute h-lvh top-0  w-3/4 pt-20 z-20
+          text-3xl bg-white transition-all duration-500 content-center justify-items-end
           ease-in-out transform overflow-hidden ${
-            isFilterOpen ? "right-0" : "-right-3/4"
+            isFilterOpen ? "left-0" : "-left-3/4"
           }`}>
         {Filters.map((index) => (
           <div
             key={index.name}
-            className={`mx-2 rounded-full my-5  ${
+            className={`mx-2 rounded-full my-10  ${
               type === index.name.toLowerCase()
                 ? "bg-primary-500 text-white"
                 : "bg-white text-secondary-500"
