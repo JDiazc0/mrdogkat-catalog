@@ -11,10 +11,12 @@ function Index() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.PUBLIC_URL}/data/Products.json`)
-      .then((response) => response.json())
-      .then((data) => setProducts(data))
-      .catch((error) => console.error("Error al cargar los productos:", error));
+    async function fetchData() {
+      const res = await fetch("/Products.json");
+      const data = await res.json();
+      setProducts(data);
+    }
+    fetchData();
   }, []);
 
   return (
