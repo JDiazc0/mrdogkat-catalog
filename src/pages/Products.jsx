@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 
 import { Filters } from "../data/Filters";
-import products from "../data/Products.json";
+import products from "/src/data/Products.json";
 
 import ProductCard from "../components/ProductCard";
 

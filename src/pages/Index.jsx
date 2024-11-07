@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { IconsSvg } from "../utils/Icon";
 import { Images } from "../utils/Img";
 import { benefits } from "../data/Benefits";
-import products from "../data/Products.json";
+import products from "/src/data/Products.json";
 
 import ProductCard from "../components/ProductCard";
 
