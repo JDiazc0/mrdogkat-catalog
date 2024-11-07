@@ -7,7 +7,7 @@ function ProductCard(props) {
     <>
       <div
         className={`bg-white shadow-lg shadow-secondary-500/75
-            min-h-[500px] w-[400px] md:min-h-[400px] md:w-[300px]
+            min-h-[500px] w-[400px] md:min-h-[300px] md:w-[300px]
             p-4 my-5 rounded-lg
             ${extraClass}`}>
         <div className="relative justify-center items-center">
@@ -21,7 +21,6 @@ function ProductCard(props) {
           <h3 className="font-bold pr-4 text-3xl md:text-xl content-center">
             {product.productName}
           </h3>
-          <p className="my-1 text-lg md:text-sm">{product.description}</p>
           <Link
             to={`/productos/${product.type}/${
               product.id
