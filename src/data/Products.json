@@ -1,0 +1,169 @@
+[
+    {
+        "id": "1",
+        "showImage":"/src/assets/img/Galletas.png",
+        "productName": "Galletas de Pollo",
+        "description": "Galletas con base de harina de trigo con avena y no sé que otras mentiras",
+        "type": "galletas",
+        "presentations": [
+            {
+                "amount": "30gr",
+                "price": "3000"
+            },
+            {
+                "amount": "50gr",
+                "price": "5000"
+            },
+            {
+                "amount": "100gr",
+                "price": "6000"
+            },
+            {
+                "amount": "200gr",
+                "price": "10000"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "showImage":"/src/assets/img/Galletas.png",
+        "productName": "Galletas de Pollo",
+        "description": "Galletas con base de harina de trigo con avena y no sé que otras mentiras",
+        "type": "galletas",
+        "presentations": [
+            {
+                "amount": "30gr",
+                "price": "3000"
+            },
+            {
+                "amount": "50gr",
+                "price": "5000"
+            },
+            {
+                "amount": "100gr",
+                "price": "6000"
+            },
+            {
+                "amount": "200gr",
+                "price": "10000"
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "showImage":"/src/assets/img/Galletas.png",
+        "productName": "Galletas de Pollo",
+        "description": "Galletas con base de harina de trigo con avena y no sé que otras mentiras",
+        "type": "galletas",
+        "presentations": [
+            {
+                "amount": "30gr",
+                "price": "3000"
+            },
+            {
+                "amount": "50gr",
+                "price": "5000"
+            },
+            {
+                "amount": "100gr",
+                "price": "6000"
+            },
+            {
+                "amount": "200gr",
+                "price": "10000"
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "showImage":"/src/assets/img/Galletas.png",
+        "productName": "Galletas de Pollo",
+        "description": "Galletas con base de harina de trigo con avena y no sé que otras mentiras",
+        "type": "galletas",
+        "presentations": [
+            {
+                "amount": "30gr",
+                "price": "3000"
+            },
+            {
+                "amount": "50gr",
+                "price": "5000"
+            },
+            {
+                "amount": "100gr",
+                "price": "6000"
+            },
+            {
+                "amount": "200gr",
+                "price": "10000"
+            }
+        ]
+    },
+    {
+        "id": "5",
+        "showImage":"/src/assets/img/Galletas.png",
+        "productName": "Galletas de Pollo",
+        "description": "Galletas con base de harina de trigo con avena y no sé que otras mentiras",
+        "type": "galletas",
+        "presentations": [
+            {
+                "amount": "30gr",
+                "price": "3000"
+            },
+            {
+                "amount": "50gr",
+                "price": "5000"
+            },
+            {
+                "amount": "100gr",
+                "price": "6000"
+            },
+            {
+                "amount": "200gr",
+                "price": "10000"
+            }
+        ]
+    },
+    {
+        "id": "6",
+        "showImage":"/src/assets/img/Galletas.png",
+        "productName": "Galletas de Pollo",
+        "description": "Galletas con base de harina de trigo con avena y no sé que otras mentiras",
+        "type": "galletas",
+        "presentations": [
+            {
+                "amount": "30gr",
+                "price": "3000"
+            },
+            {
+                "amount": "50gr",
+                "price": "5000"
+            },
+            {
+                "amount": "100gr",
+                "price": "6000"
+            },
+            {
+                "amount": "200gr",
+                "price": "10000"
+            }
+        ]
+    },
+    {
+        "id": "7",
+        "showImage":"/src/assets/img/GomaHigado.png",
+        "productName": "Galletas de Pollo",
+        "description": "Galletas con base de harina de trigo con avena y no sé que otras mentiras",
+        "type": "galletas",
+        "presentations": [
+            {
+                "amount": "5 unidades",
+                "price": "3000"
+            },
+            {
+                "amount": "10 unidades",
+                "price": "10000"
+            }
+        ]
+    }
+]
