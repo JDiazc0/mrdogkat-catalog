@@ -1,13 +1,19 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import products from "../data/Products.json";
-
 function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [recommendedProduct, setRecommendeProduct] = useState(null);
+  const [products, setProducts] = useState([]);
   const notFound = "Producto no encontrado.";
+
+  useEffect(() => {
+    fetch(`${process.env.PUBLIC_URL}/data/Products.json`)
+      .then((response) => response.json())
+      .then((data) => setProducts(data))
+      .catch((error) => console.error("Error al cargar los productos:", error));
+  }, []);
 
   function getRandomProduct() {
     const randomIndex = Math.floor(Math.random() * products.length);

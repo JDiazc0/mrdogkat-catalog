@@ -1,13 +1,22 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import { IconsSvg } from "../utils/Icon";
 import { Images } from "../utils/Img";
 import { benefits } from "../data/Benefits";
-import products from "/src/data/Products.json";
 
 import ProductCard from "../components/ProductCard";
 
 function Index() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch(`${process.env.PUBLIC_URL}/data/Products.json`)
+      .then((response) => response.json())
+      .then((data) => setProducts(data))
+      .catch((error) => console.error("Error al cargar los productos:", error));
+  }, []);
+
   return (
     <>
       <div className="relative w-full h-screen overflow-x-hidden font-Epilogue text-secondary-500 pt-16 h-lvh">

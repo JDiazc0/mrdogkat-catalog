@@ -2,7 +2,6 @@ import { Link, useParams } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 
 import { Filters } from "../data/Filters";
-import products from "/src/data/Products.json";
 
 import ProductCard from "../components/ProductCard";
 
@@ -10,7 +9,15 @@ function Products() {
   const { type } = useParams();
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [products, setProducts] = useState([]);
   const filterRef = useRef(null);
+
+  useEffect(() => {
+    fetch(`${process.env.PUBLIC_URL}/data/Products.json`)
+      .then((response) => response.json())
+      .then((data) => setProducts(data))
+      .catch((error) => console.error("Error al cargar los productos:", error));
+  }, []);
 
   useEffect(() => {
     const filtered =
