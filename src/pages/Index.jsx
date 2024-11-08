@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import { IconsSvg } from "../utils/Icon";
-import { Images } from "../utils/Img";
+import { imageMap } from "../utils/imageMap";
 import { benefits } from "../data/Benefits";
 
 import ProductCard from "../components/ProductCard";
@@ -45,7 +45,7 @@ function Index() {
               className="absolute -z-20 h-96 md:h-2/3 lg:h-auto"
             />
             <img
-              src={Images.Galletas}
+              src={imageMap["Galletas.png"]}
               alt=""
               className="absolute h-80 -z-10 md:h-1/3 lg:h-2/3"
             />
