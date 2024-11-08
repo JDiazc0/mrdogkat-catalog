@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { imageMap } from "../utils/imageMap";
 
 function ProductCard(props) {
   const { product, extraClass } = props;
@@ -12,7 +13,7 @@ function ProductCard(props) {
             ${extraClass}`}>
         <div className="relative justify-center items-center">
           <img
-            src={product.showImage}
+            src={imageMap[product.showImage]}
             alt={product.productName}
             className="w-full h-auto block"
           />

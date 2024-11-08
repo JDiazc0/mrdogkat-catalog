@@ -1,7 +1,7 @@
 [
     {
         "id": "1",
-        "showImage":"/src/assets/img/Galletas.png",
+        "showImage":"/Galletas.png",
         "productName": "Galletas de Pollo",
         "description": "Galletas con base de harina de trigo con avena y no sé que otras mentiras",
         "type": "galletas",
