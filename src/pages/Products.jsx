@@ -25,7 +25,7 @@ function Products() {
     const filtered =
       type !== "todo" ? products.filter((p) => p.type === type) : products;
     setFilteredProducts(filtered);
-  }, [type]);
+  }, [type, products]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {

@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { imageMap } from "../utils/imageMap";
 
 function ProductDetail() {
   const { id } = useParams();
@@ -9,42 +10,41 @@ function ProductDetail() {
   const notFound = "Producto no encontrado.";
 
   useEffect(() => {
-    fetch(`${process.env.PUBLIC_URL}/data/Products.json`)
-      .then((response) => response.json())
-      .then((data) => setProducts(data))
-      .catch((error) => console.error("Error al cargar los productos:", error));
-  }, []);
+    async function fetchData() {
+      const res = await fetch("/Products.json");
+      const data = await res.json();
+      setProducts(data);
 
-  function getRandomProduct() {
-    const randomIndex = Math.floor(Math.random() * products.length);
-    return products[randomIndex];
-  }
-
-  useEffect(() => {
-    let randomProduct;
-
-    do {
-      randomProduct = getRandomProduct();
-    } while (randomProduct.id === id);
-
-    setRecommendeProduct(randomProduct);
+      if (data.length > 0) {
+        let randomProduct;
+        do {
+          randomProduct = data[Math.floor(Math.random() * data.length)];
+        } while (randomProduct.id === id);
+        setRecommendeProduct(randomProduct);
+      }
+    }
+    fetchData();
   }, [id]);
 
   useEffect(() => {
     const foundProduct = products.find((p) => p.id === id);
     setProduct(foundProduct);
-  }, [id]);
+  }, [id, products]);
 
   return (
     <>
       <div className="relative w-full h-screen overflow-x-hidden font-Epilogue text-secondary-500 pt-16 h-lvh">
         <section className="flex flex-col lg:flex-row">
           <div className="w-full h-min lg:w-1/2 h-lvh flex flex-col">
-            <img
-              src={product ? product.showImage : ""}
-              alt=""
-              className="object-cover"
-            />
+            {product ? (
+              <img
+                src={imageMap[product.showImage]}
+                alt=""
+                className="object-cover"
+              />
+            ) : (
+              <div>Loading...</div>
+            )}
           </div>
           <div className="w-full h-min lg:w-1/2 h-lvh p-10">
             <h4 className="font-bold text-4xl text-center">
@@ -94,7 +94,7 @@ function ProductDetail() {
                     className="w-full h-min flex bg-primary-50 bg-opacity-30 h-56 
               items-center overflow-hidden rounded select-none">
                     <img
-                      src={recommendedProduct.showImage}
+                      src={imageMap[recommendedProduct.showImage]}
                       alt=""
                       className="w-1/2 object-cover hover:scale-105"
                     />
